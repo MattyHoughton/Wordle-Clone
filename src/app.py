@@ -10,10 +10,6 @@ with open('word_list.txt', 'r') as file:                    # Load word list fro
 
 selected_word = random.choice(words)                        # Select a random 5-letter word for the game
 
-@app.route('/word', methods=['GET'])
-def get_word():
-    return jsonify({"word_length": len(selected_word)})     # Return the length of the selected word
-
 @app.route('/guess', methods=['POST'])
 def guess_word():
     data = request.json
